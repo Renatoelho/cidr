@@ -1,4 +1,4 @@
-# CIDR: Entendendo as Classes de IP no Docker
+# CIDR: Entendendo as classes de IP no Docker
 
 O **CIDR (Classless Inter-Domain Routing)** e as subnets são fundamentais para a alocação eficiente de **endereços IP** e segmentação de redes, eliminando as limitações das antigas classes de IP (A, B e C). No contexto do **Docker**, o CIDR é amplamente utilizado para definir redes virtuais personalizadas, permitindo que contêineres se comuniquem dentro de um mesmo subnet ou sejam isolados em diferentes redes. Ao criar um **docker network** com uma faixa CIDR específica, é possível **otimizar** a distribuição de endereços IP, melhorar a **segurança** e garantir que diferentes serviços dentro do ambiente conteinerizado possam se conectar de forma eficiente. Além disso, ao trabalhar com múltiplas faixas de IP no **Docker Compose**, é essencial compreender o mascaramento de sub-rede e roteamento entre bridges para garantir que aplicações distribuídas operem corretamente sem conflitos de endereçamento.
 
@@ -21,7 +21,7 @@ https://www.youtube.com/@renato-coelho
 + ![Git](https://img.shields.io/badge/Git-2.25.1%2B-E3E3E3)
 + ![Ubuntu](https://img.shields.io/badge/Ubuntu-20.04-E3E3E3)
 
-## Conceitos de CIDR e Máscara de Sub-rede
+## Conceitos de CIDR e máscara de Sub-rede
 
 O CIDR foi introduzido para permitir uma alocação de endereços mais eficiente, substituindo as antigas classes fixas de IP (A, B e C). Ele utiliza um sufixo `/n` para indicar o tamanho da sub-rede.
 
@@ -33,7 +33,7 @@ O CIDR foi introduzido para permitir uma alocação de endereços mais eficiente
 
 ### Limites das faixas de IPs privados:
 
-| Faixa de IP                    | Máscara MÁXIMA      | Endereços totais |
+| Faixa de IP                    | Máscara             | Endereços totais |
 |--------------------------------|---------------------|------------------|
 | 10.0.0.0 → 10.255.255.255      | /8                  | 16.777.216       |
 | 172.16.0.0 → 172.31.255.255    | /12                 | 1.048.576        |
@@ -57,7 +57,7 @@ A quantidade de endereços disponíveis em uma sub-rede pode ser calculada como:
 - **Gateway da Rede Docker:** O endereço (`10.10.1.1`)
 - **Broadcast:** O último endereço do intervalo (`10.10.1.?`)
 
-## Criando Redes Customizadas no Docker
+## Criando redes customizadas no Docker
 
 O Docker permite definir redes personalizadas com CIDR, facilitando a segmentação de aplicações.
 
@@ -112,8 +112,8 @@ docker compose -p cidr -f docker-compose.yaml up -d --build
 
 ## Referências
 
-- Endereço de IP, **Wikipedia**. Disponível em: <https://pt.wikipedia.org/wiki/Endereço_IP>. Acesso em: 04 fev. 2025.
+Endereço de IP, **Wikipedia**. Disponível em: <https://pt.wikipedia.org/wiki/Endereço_IP>. Acesso em: 04 fev. 2025.
 
-- Classless Inter-domain Routing (CIDR): **RFC 4632**. Disponível em: <https://datatracker.ietf.org/doc/html/rfc4632>. Acesso em: 04 fev. 2025.
+Classless Inter-domain Routing (CIDR): **RFC 4632**. Disponível em: <https://datatracker.ietf.org/doc/html/rfc4632>. Acesso em: 04 fev. 2025.
 
-- Networking overview, **Docker Docs**. Disponível em: <https://docs.docker.com/engine/network/>. Acesso em: 04 fev. 2025.
+Networking overview, **Docker Docs**. Disponível em: <https://docs.docker.com/engine/network/>. Acesso em: 04 fev. 2025.
