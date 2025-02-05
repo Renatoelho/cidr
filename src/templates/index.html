@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utilizando Nginx como Load Balancer</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: #ffffff;
+            color: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: #f0f0f0;
+            padding: 20px;
+            border: 1px solid #dcdcdc;
+            border-radius: 10px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Você está acessando o contêiner:</h1>
+        <h1><strong>{{APP_ID}}</strong></h1>
+        <h2>O IP desse dispositivo é:</h2>
+        <h2><strong>{{APP_IP}}</strong></h2>
+    </div>
+</body>
+</html>

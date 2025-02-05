@@ -1,0 +1,22 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: dockerfile
+    image: imagem-modelo:0.0.1
+    ports:
+      - 8000-8004:8000 # O intervalo de portas está ligado à quantidade de réplicas.
+    volumes:
+      - ./src:/src
+    deploy:
+      replicas: 5 # O número de réplicas está ligado à quantidade de IPs válidos.
+    restart: always
+    command: uvicorn app:app --host 0.0.0.0 --port 8000 --reload
+    networks:
+      - rede_cidr
+networks:
+  rede_cidr:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.3.0.0/29 # 8 IPs 5 válidos
