@@ -9,10 +9,10 @@ https://www.youtube.com/@renato-coelho
 ## Apresentação em Vídeo
 
 <p align="center">
-  <a href="https://www.youtube.com/@renato-coelho" target="_blank"><img src="imagens/thumbnail/thumbnail-cidr-faixas-ip-docker-github-01.png" alt="Vídeo de apresentação"></a>
+  <a href="https://youtu.be/cOIcNH27gkI" target="_blank"><img src="imagens/thumbnail/thumbnail-cidr-faixas-ip-docker-github-01.png" alt="Vídeo de apresentação"></a>
 </p>
 
-![YouTube Video Views](https://img.shields.io/youtube/views/????????) ![YouTube Video Likes](https://img.shields.io/youtube/likes//????????))
+![YouTube Video Views](https://img.shields.io/youtube/views/cOIcNH27gkI) ![YouTube Video Likes](https://img.shields.io/youtube/likes/cOIcNH27gkI)
 
 ### Requisitos
 
@@ -100,20 +100,10 @@ docker compose -p cidr -f docker-compose.yaml up -d --build
 - O número de **réplicas** da aplicação está diretamente ligado ao número de **IPs disponíveis**.
 - O intervalo de portas (`8000-8004`) segue a quantidade de réplicas configuradas.
 
-## Resumo
-
-1. O **CIDR** permite um uso mais eficiente dos endereços IP.
-2. As **máscaras de sub-rede** determinam quantos **hosts** podem existir dentro de uma rede.
-3. O **Docker** permite criar redes personalizadas com o comando:
-   ```bash
-   docker network create --subnet=10.10.1.0/24 minha_rede
-   ```
-4. No `docker-compose`, redes podem ser **customizadas e segmentadas** para melhor **segurança** e **escalabilidade**.
-
 ## Referências
 
 Endereço de IP, **Wikipedia**. Disponível em: <https://pt.wikipedia.org/wiki/Endereço_IP>. Acesso em: 04 fev. 2025.
 
-Classless Inter-domain Routing (CIDR): **RFC 4632**. Disponível em: <https://datatracker.ietf.org/doc/html/rfc4632>. Acesso em: 04 fev. 2025.
+Classless Inter-domain Routing (CIDR), **RFC 4632**. Disponível em: <https://datatracker.ietf.org/doc/html/rfc4632>. Acesso em: 04 fev. 2025.
 
 Networking overview, **Docker Docs**. Disponível em: <https://docs.docker.com/engine/network/>. Acesso em: 04 fev. 2025.
